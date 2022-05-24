@@ -23,23 +23,13 @@ class Menu < ApplicationRecord
     end
   end
 
-  def self.search(search = '', state = '', parent_name = '')
+  def self.search(search = '', state = '')
     @scope = Menu.all
   
     result = @scope
-    # binding.pry
     result = result.where("name iLIKE ?", "%#{search}%") if search.present?
     result = result.where("aasm_state iLIKE ?", "%#{state}%") if state.present?
   
     result
-    # @scope = order(created_at: :asc)
-    # if search
-    #   @scope.where("name iLIKE ?", "%#{search}%")
-    # elsif state
-    #   @scope.where("aasm_state iLIKE ?", "%#{state}%")
-    # else
-    #   order(created_at: :asc)
-    # end
-    # @scope
   end
 end
