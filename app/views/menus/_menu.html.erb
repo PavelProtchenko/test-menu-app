@@ -1,0 +1,15 @@
+<div>
+  <span class="btn-sm <%= change_badge_state(menu.aasm_state) %>">
+    <%= menu.id %>
+    <%= menu.name %>
+    <%= menu.aasm_state %>
+  </span> >
+  <% menu.sub_menus.each do |sub_menu| %>
+    <span class="btn-sm <%= change_badge_state(sub_menu.aasm_state) %>">
+      <%= sub_menu.id %>
+      <%= sub_menu.name %>
+      <%= sub_menu.aasm_state %>
+    </span>
+    >
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <%= form_tag admin_menus_path, method: 'get' do %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
+    <%= select_tag :state, options_for_select(['new', 'blocked', 'active']), include_blank: true %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</nav>
+<h1>Menus</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+      <tr>
+      <th scope="col"><%= t('.id') %></th>
+      <th scope="col"><%= t('.parent_names') %></th>
+      <th scope="col"><%= t('.child_names') %></th>
+      <th scope="col"><%= t('.state') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'admin/menus/menu', collection: @menus %>
+  </tbody>
+</table>
