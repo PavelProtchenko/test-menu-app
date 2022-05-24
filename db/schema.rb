@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2022_05_21_100943) do
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
-    t.integer "child_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "aasm_state"

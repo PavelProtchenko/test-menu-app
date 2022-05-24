@@ -3,7 +3,6 @@ class CreateMenus < ActiveRecord::Migration[6.0]
     create_table :menus do |t|
       t.string :name
       t.integer :parent_id
-      t.integer :child_id
 
       t.timestamps
     end
