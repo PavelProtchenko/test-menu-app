@@ -4,9 +4,4 @@ class Admin::MenusController < ApplicationController
                  .search(params[:search], params[:state], params[:parent_name])
     render :index
   end
-
-  def search
-    @search = SearchService.new(params[:search]).fetch
-    render :index
-  end
 end
